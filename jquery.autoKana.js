@@ -27,10 +27,11 @@
 
         var options = $.extend(
             {
-                'katakana': false
+                'katakana': false,
+                'keep_numbers': false
             }, passedOptions);
 
-        var kana_extraction_pattern = new RegExp('[^ 　ぁあ-んー]', 'g');
+        var kana_extraction_pattern = new RegExp('[^ 　ぁあ-んー' + (options.keep_numbers ? '0-9-' : '')  + ']', 'g');
         var kana_compacting_pattern = new RegExp('[ぁぃぅぇぉっゃゅょ]', 'g');
         var elName,
             elKana,
