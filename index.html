@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>autokana sample</title>
+</head>
+<body>
+    <form>
+		<label for="text">text: </label><input type="text" id="text">
+        <br />
+        <br />
+		<label for="kana">kana: </label><input type="text" id="kana">
+	</form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="jquery.autoKana.js"></script>
+	<script>
+        $(function() {
+            $.fn.autoKana('#text', '#kana', {
+                katakana: false,
+                keep_numbers: true
+            });
+        });
+    </script>
+</body>
+</html>
