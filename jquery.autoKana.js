@@ -2,7 +2,7 @@
 //
 // Based on the AutoRuby library created by:
 // Copyright (c) 2005-2008 spinelz.org (http://script.spinelz.org/)
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
 // "Software"), to deal in the Software without restriction, including
@@ -10,7 +10,7 @@
 // distribute, sublicense, and/or sell copies of the Software, and to
 // permit persons to whom the Software is furnished to do so, subject to
 // the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
 //
@@ -27,10 +27,11 @@
 
         var options = $.extend(
             {
-                'katakana': false
+                'katakana': false,
+                'keep_numbers': false
             }, passedOptions);
 
-        var kana_extraction_pattern = new RegExp('[^ 　ぁあ-んー]', 'g');
+        var kana_extraction_pattern = new RegExp('[^ 　ぁあ-んー' + (options.keep_numbers ? '0-9-０１２３４５６７８９－' : '')  + ']', 'g');
         var kana_compacting_pattern = new RegExp('[ぁぃぅぇぉっゃゅょ]', 'g');
         var elName,
             elKana,
